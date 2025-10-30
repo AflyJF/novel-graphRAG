@@ -1,0 +1,37 @@
+# 项目配置文件
+
+project:
+  name: "novel-graphRAG"
+  version: "1.0.0"
+  description: "基于知识图谱的小说分析系统"
+
+# 数据目录配置
+data:
+  upload_dir: "/root/autodl-tmp/uploads"
+  processed_dir: "/root/autodl-tmp/processed"
+  models_dir: "/root/autodl-tmp/models"
+  logs_dir: "/root/novel-graphRAG/logs"
+
+# 数据库配置
+database:
+  neo4j:
+    uri: "bolt://localhost:7687"
+    username: "neo4j"
+    password: "password"
+
+# LLM配置
+llm:
+  # 阿里云大模型API配置
+  aliyun_api:
+    base_url: "https://dashscope.aliyuncs.com/api/v1"
+    api_key: "your_api_key_here"
+  
+  # 本地模型配置
+  local_model:
+    path: "/root/autodl-tmp/models/Qwen3-14B-Instruct"
+    engine: "vllm"
+
+# Flask后端配置
+server:
+  host: "0.0.0.0"
+  port: 5000
