@@ -23,8 +23,10 @@ database:
 llm:
   # 阿里云大模型API配置
   aliyun_api:
-    base_url: "https://dashscope.aliyuncs.com/api/v1"
-    api_key: "your_api_key_here"
+    # 使用阿里云百炼平台OpenAI兼容模式的正确base_url
+    base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+    # API密钥将从环境变量DASHSCOPE_API_KEY中获取
+    api_key: "${DASHSCOPE_API_KEY}"
   
   # 本地模型配置
   local_model:
